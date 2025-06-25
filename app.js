@@ -66,7 +66,7 @@ app.get('/obtenerUsuario',(req,res)=>{
 });
 
 app.post('/borrarUsuario', (req, res) => {
-    const id = req.body.id; // El ID del usuario a eliminar viene en el cuerpo de la solicitud
+    const id = req.body.id; 
     console.log("hola")
     con.query('DELETE FROM usuario WHERE id_usuario = ?', [id], (err, resultado, fields) => {
 

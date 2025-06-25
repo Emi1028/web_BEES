@@ -80,3 +80,59 @@ app.post('/borrarUsuario', (req, res) => {
         return res.send(`Usuario con ID ${id} borrado correctamente`);
     });
 });
+
+app.post('/editarUsuario', (req, res) => {
+    const { id, nuevoNombre } = req.body;
+    con.query(
+        'UPDATE usuario SET nombre = ? WHERE id_usuario = ?',
+        [nuevoNombre, id],
+        (err, resultado) => {
+            if (err) return res.status(500).send('Error al editar usuario');
+            res.redirect('/');
+        }
+    );
+});
+
+app.get('/buscarUsuarioAcciones', (req, res) => {
+    const { id, nombre } = req.query;
+    let query = 'SELECT * FROM usuario';
+    let where = [];
+    let values = [];
+
+    if (id) {
+        where.push('id_usuario = ?');
+        values.push(id);
+    }
+    if (nombre) {
+        where.push('nombre LIKE ?');
+        values.push('%' + nombre + '%');
+    }
+    if (where.length > 0) {
+        query += ' WHERE ' + where.join(' AND ');
+    }
+
+    con.query(query, values, (err, resultados) => {
+        if (err) return res.status(500).send('Error al buscar usuario');
+        if (resultados.length === 0) return res.send('Usuario no encontrado');
+
+        let html = '<h3>Resultados:</h3>';
+        resultados.forEach(usuario => {
+            html += `
+                <div style="border:1px solid #ccc; padding:10px; margin:10px;">
+                    <p>ID: ${usuario.id_usuario}</p>
+                    <p>Nombre: ${usuario.nombre}</p>
+                    <form style="display:inline;" action="/editarUsuario" method="POST">
+                        <input type="hidden" name="id" value="${usuario.id_usuario}" />
+                        <input type="text" name="nuevoNombre" placeholder="Nuevo nombre" required />
+                        <button type="submit">Modificar</button>
+                    </form>
+                    <form style="display:inline;" action="/eliminarUsuario" method="POST" onsubmit="return confirm('¿Seguro que deseas eliminar este usuario?');">
+                        <input type="hidden" name="id" value="${usuario.id_usuario}" />
+                        <button type="submit">Eliminar</button>
+                    </form>
+                </div>
+            `;
+        });
+        res.send(html);
+    });
+});

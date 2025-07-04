@@ -15,16 +15,20 @@
                 <label>Nombre</label>
                 <input type="text" name="nombre" placeholder="Nombres" required>
                 <div class="apellidos">
-                    <article><label>Apellido paterno</label><br>
+                    <article class="espacio"><label>Apellido paterno</label><br>
                     <input type="text" name="apellido_p" placeholder="Apellido paterno" required></article>
+
                     <article><label>Apellido materno</label><br>
                     <input type="text" name="apellido_m" placeholder="Apellido Materno" required></article>
-                    
                 </div>
+                <label>Telefono</label>
+                <input type="text" name="telefono" placeholder="10 digitos" required>
                 <hr>
-                <input type="password" name="password" placeholder="Contraseña" required>
-                <input type="password" name="confimar" placeholder="Contraseña" required>
-                <button type="submit">Registrar Usuario</button>
+                <label for="contraseña"> Contraseña</label>
+                <input type="password" name="contraseña" placeholder="Al menos 8 caracteres" required>
+                <label for="confimar">Confirmar contraseña</label>
+                <input type="password" name="confimar" placeholder="Ingrese la contraseña nuevamente" required>
+                <button type="submit">Registrarse</button>
             </form>
         </div>
 

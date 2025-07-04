@@ -6,7 +6,7 @@ var con=mysql.createConnection({
     host:'localhost',
     user:'root',
     password:'n0m3l0',
-    database:'crud'
+    database:'b.e.e.s'
 })
 con.connect();
 

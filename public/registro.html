@@ -9,12 +9,14 @@
 </head>
 <body> 
     <main>
-        <h1>Registro de Usuario</h1>
-        <form action="/agregarUsuario" method="post">
-            <input type="text" name="nombre" placeholder="Nombre de Usuario" required>
-            <input type="email" name="email" placeholder="Correo Electrónico" required>
-            <input type="password" name="password" placeholder="Contraseña" required>
-            <input type="submit" value="Registrar Usuario">
-        </form>
+        <div class="container">
+            <h1>Registro de Usuario</h1>
+            <form action="/agregarUsuario" method="post">
+                <input type="text" name="nombre" placeholder="Nombre de Usuario" required>
+                <input type="email" name="email" placeholder="Correo Electrónico" required>
+                <input type="password" name="password" placeholder="Contraseña" required>
+                <button type="submit">Registrar Usuario</button>
+            </form>
+        </div>
     </main>
 </html>

@@ -15,3 +15,21 @@ button, .btn-green {
 button:hover, .btn-green:hover {
     background: #388e3c;
 }
+.global-header {
+    background-color: black;
+    
+    color: #fff;
+    --header-padding-inline: 1.5rem;
+}
+main {
+    padding: 0;
+    margin: 1rem;
+}
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+    padding: 0;
+    margin: 0;
+}

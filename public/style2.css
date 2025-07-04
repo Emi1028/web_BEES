@@ -1,3 +1,11 @@
+body {
+    display: flex;
+    justify-content: center;     
+    align-items: center;         
+    height: 100vh;               
+    margin: 0;                   
+    background-color: #fff;      
+}
 input {
     padding: 10px;
     border: 1px solid #bfc4c9;
@@ -5,4 +13,41 @@ input {
     font-size: 1rem;
     background: #f8f9fa;
     transition: border 0.2s;
+}
+input:focus {
+    border: 1.5px solid #4caf50;
+    outline: none;
+}
+button, .btn-green {
+    background: #4caf50;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 10px 0;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.2s;
+    margin-top: 5px;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+}
+button:hover, .btn-green:hover {
+    background: #388e3c;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+.container {
+    width: 90vw;
+    max-width: 500px;
+    margin: 0 auto;
+    text-align: center;
+    color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    background-color: #585858;
 }

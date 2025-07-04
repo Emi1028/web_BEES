@@ -33,7 +33,7 @@ app.post('/agregarUsuario',(req,res)=>{
 })
 
 app.listen(5500,()=>{
-    console.log('Servidor escuchando en el puerto 10000')
+    console.log('Servidor escuchando en el puerto 5500')
 })
 
 //fin consultar

@@ -31,7 +31,7 @@ app.post('/agregarUsuario',(req,res)=>{
                 return res.status(500).send("Error al conectar");
             }
            
-            return res.send(`<h1>Nombre:aaaaaaaa</h1> ${nombre}`);
+            return res.send(exitoso.html);
         });
    
 })

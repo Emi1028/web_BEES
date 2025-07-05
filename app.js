@@ -30,8 +30,7 @@ app.post('/agregarUsuario',(req,res)=>{
                 console.log("Error al conectar", err);
                 return res.status(500).send("Error al conectar");
             }
-           
-            return res.send(exitoso.html);
+            res.redirect('/exitoso.html');
         });
    
 })

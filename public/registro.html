@@ -11,7 +11,7 @@
     <main>
         <div class="container">
             <h1>Registro</h1>
-            <form action="/agregarUsuario" method="post" action="registro.html">
+            <form action="/agregarUsuario" method="post">
                 <label>Nombre</label>
                 <input type="text" name="nombre" placeholder="Nombres" required>
                 <div class="apellidos">
@@ -24,13 +24,21 @@
                 <label>Telefono</label>
                 <input type="text" name="telefono" placeholder="10 digitos" required>
                 <hr>
-                <p id="mensajeError" class="error"></p>
                 <label for="contraseña"> Contraseña</label>
                 <input type="password" name="contraseña" placeholder="Al menos 8 caracteres" required>
-                <label for="confimar">Confirmar contraseña</label>
-                <input type="password" name="confimar" placeholder="Ingrese la contraseña nuevamente" required>
+                <label for="confirmar">Confirmar contraseña</label>
+                <input type="password" name="confirmar" placeholder="Ingrese la contraseña nuevamente" required>
                 <button type="submit">Registrarse</button>
+                <p id="mensajeError" class="error"></p>
             </form>
         </div>
     </main>
+    <script>
+    // Mostrar mensaje de error si viene en la URL
+    const params = new URLSearchParams(window.location.search);
+    const error = params.get('error');
+    if (error) {
+        document.getElementById('mensajeError').textContent = decodeURIComponent(error);
+    }
+    </script>
 </html>

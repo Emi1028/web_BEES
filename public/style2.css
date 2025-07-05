@@ -105,7 +105,9 @@ form {
     align-items: center;
 }
 .error {
-      color: #f85149;
+      color: #f52e24;
+      font-family: 'Anton', sans-serif;
+      font-size: 20px;
       margin-top: 0;
       padding: 0;
       text-align: center;

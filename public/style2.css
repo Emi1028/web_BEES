@@ -104,3 +104,9 @@ form {
     height: 60px;
     align-items: center;
 }
+.error {
+      color: #f85149;
+      margin-top: 0;
+      padding: 0;
+      text-align: center;
+    }

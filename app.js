@@ -22,16 +22,31 @@ app.post('/agregarUsuario',(req,res)=>{
         let apellido_p=req.body.apellido_p
         let apellido_m=req.body.apellido_m  
         let telefono=req.body.telefono
-        let contraseña=req.body.contraseña
+        let contraseña = req.body.contraseña;
+        let confirmar = req.body.confirmar;
 
+        const pass1 = (contraseña || "").trim();
+        const pass2 = (confirmar || "").trim();
+
+        // Validar que las contraseñas coincidan exactamente
+        if (pass1 !== pass2) {
+            return res.status(400).send("Las contraseñas no coinciden");
+        }
         con.query('INSERT INTO cuenta ( nombre_padre, apellido_paterno_padre, apellido_materno_padre, telefono_padre, contrasena_padre) VALUES (?, ?, ?, ?, ?)', 
             [nombre ,apellido_p, apellido_m, telefono, contraseña], (err, respuesta, fields) => {
-            if (err) {
-                console.log("Error al conectar", err);
-                return res.status(500).send("Error al conectar");
+                if (err) {
+                    console.log("Error al conectar", err);
+                    return res.status(500).send("Error al conectar");
+                }
+                else {res.redirect('/exitoso.html');}
             }
-            res.redirect('/exitoso.html');
-        });
+        );
+        
+
+        // Si las contraseñas coinciden, permitir el envío del formulario
+        
+
+        
    
 })
 

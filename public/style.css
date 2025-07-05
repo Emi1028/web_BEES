@@ -37,6 +37,7 @@ body {
     height: 50vh;               
     margin: 0;
     background-color: #3fc0c5;
+    color:#ffffff;
     font-family: 'Segoe UI', sans-serif; 
 }
 h1 {
@@ -53,10 +54,19 @@ header {
     color: #EDD944;
     background-color: black;
     padding: 20px;
+    font-size: 30px;
+    font-family: 'Anton', sans-serif;
 }
 
 footer {
     background-color: black;
     padding: 20px;
     color: #fff;
+}
+p {
+    text-align: justify;
+}
+img{
+    width: 48.6px;
+    height: 40px;
 }

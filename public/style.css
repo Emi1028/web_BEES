@@ -63,9 +63,22 @@ footer {
     color: #fff;
 }
 p {
+    font-size: 1.2rem;  
     text-align: justify;
+    color: #000000;
 }
-img{
+.logo{
     width: 48.6px;
     height: 40px;
+}
+.texto {
+    display: flex;
+    font-size: 1.2rem;
+    margin: 20px;
+    padding: 20px;
+}
+
+img {
+    width: 100px;
+    height: 100px;
 }

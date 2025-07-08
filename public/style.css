@@ -74,11 +74,14 @@ p {
 .texto {
     display: flex;
     font-size: 1.2rem;
+    margin: 0;
+    padding: 0
+}
+div {
     margin: 20px;
     padding: 20px;
 }
-
 img {
-    width: 100px;
-    height: 100px;
+    width: 400px;
+    height: 400px;
 }

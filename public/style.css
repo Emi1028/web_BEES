@@ -71,9 +71,10 @@ p {
     width: 48.6px;
     height: 40px;
 }
-.texto {
+.lista {
     display: flex;
     font-size: 1.2rem;
+    justify-content: center;
     margin: 0;
     padding: 0
 }
@@ -84,4 +85,15 @@ div {
 img {
     width: 400px;
     height: 400px;
+}
+.juegos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 600px;
+    height: 400px;
+}
+.espacio{
+    padding-left: 90px;
 }
